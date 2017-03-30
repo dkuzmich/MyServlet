@@ -14,6 +14,18 @@
 
 <body>
 <h1>Hello my servlet! and hello ${name} </h1>
+you enter name ${first_name}
+<form action="ActionForm" method="Get">
+    First name: <input type="text" name="first_name">
+    <bt />
+    Last name: <input type="text" name="last_name" />
+    <input type="submit" value="Submit"/>
+</form>
+<form action="CheckBox" method="Get" target="_blank">
+    <input type="checkbox" name="maths" checked="checked"/> Match
+    <input type="checkbox" name="Physic"/> Physics
+    <input type="submit" value="select Subject">
+</form>
 </body>
 
 </html>

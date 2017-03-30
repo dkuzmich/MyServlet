@@ -1,10 +1,12 @@
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 /**
  * Created by dkuzmich on 3/28/2017.
@@ -18,7 +20,16 @@ public class MainServlet extends HttpServlet {
         //PrintWriter pw=resp.getWriter();
         //pw.print("<h1> Hello servlet </h1>");
         req.setAttribute("name", "Dima");
+       String firstName=req.getParameter("first_name");
+        System.out.println("First name = " +firstName);
+       Cookie[] cook=req.getCookies();
+
+        System.out.println("cookie = " +cook);
+
+
+
         req.getRequestDispatcher("mypage.jsp").forward(req, resp);
+
 
     }
 
