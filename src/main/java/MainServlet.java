@@ -20,13 +20,13 @@ public class MainServlet extends HttpServlet {
         //PrintWriter pw=resp.getWriter();
         //pw.print("<h1> Hello servlet </h1>");
         req.setAttribute("name", "Dima");
-       String firstName=req.getParameter("first_name");
-        System.out.println("First name = " +firstName);
-       Cookie[] cook=req.getCookies();
 
-        System.out.println("cookie = " +cook);
+        String login=req.getParameter("login");
 
 
+        req.setAttribute("Login", login);
+
+        req.setAttribute("Pass", req.getParameter("pass"));
 
         req.getRequestDispatcher("mypage.jsp").forward(req, resp);
 

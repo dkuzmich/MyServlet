@@ -13,9 +13,8 @@ public class FilterSecurity implements Filter{
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         String name=request.getParameter("firstname");
-
-        System.out.println("!!!!!Filter 2!!!!!!!!!");
-        System.out.println("!!!!! You enter name = " +name);
+        // System.out.println("!!!!!Filter 2!!!!!!!!!");
+      //  System.out.println("!!!!! You enter name = " +name);
         chain.doFilter(request,response);
 
     }
