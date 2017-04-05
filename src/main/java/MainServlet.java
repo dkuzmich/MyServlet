@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.*;
 import java.util.Enumeration;
 
 /**
@@ -13,6 +14,9 @@ import java.util.Enumeration;
  */
 @WebServlet("/")
 public class MainServlet extends HttpServlet {
+
+Mydb mydb=new Mydb();
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,6 +31,7 @@ public class MainServlet extends HttpServlet {
         req.setAttribute("Login", login);
 
         req.setAttribute("Pass", req.getParameter("pass"));
+        mydb.contoDB();
 
         req.getRequestDispatcher("mypage.jsp").forward(req, resp);
 
@@ -35,6 +40,20 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+
+        String condb=req.getParameter("conDB");
+        if("conDB".equals(condb)){
+            System.out.println("!!!!!!!! DB Connected!!!!!!!!!!!!");
+            resp.setContentType("text/html");
+            PrintWriter outp=resp.getWriter();
+            outp.print("!!!!!!!! DB Connected!!!!!!!!!!!!");
+          //req.setAttribute("dbcon", " DB connected");
+           req.getRequestDispatcher("myDB.jsp").forward(req, resp);
+        }
     }
+
+
+
+
+
 }

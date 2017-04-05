@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * Created by dkuzmich on 3/30/2017.
  */
-@WebFilter(filterName ="FilterSecurity", urlPatterns = "/")
+//@WebFilter(filterName ="FilterSecurity", urlPatterns = "/")
 public class FilterSecurity implements Filter{
     public void init(FilterConfig filterConfig) throws ServletException {
 

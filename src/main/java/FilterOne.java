@@ -7,7 +7,7 @@ import java.io.IOException;
  * Created by dkuzmich on 3/30/2017.
  */
 
-@WebFilter(filterName = "FilterOne", urlPatterns = "/")
+//@WebFilter(filterName = "FilterOne", urlPatterns = "/")
 public class FilterOne implements Filter {
 
     public void init(FilterConfig filterConfig) throws ServletException {
